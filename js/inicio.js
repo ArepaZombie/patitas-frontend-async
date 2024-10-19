@@ -66,6 +66,8 @@ async function autenticar(tipoDocumento, numeroDocumento, password, msgError){
 
         if(result.codigo == '00'){
             localStorage.setItem('result', JSON.stringify(result));
+            localStorage.setItem('tipodocumento', tipoDocumento)
+            localStorage.setItem('numerodocumento', numeroDocumento)
             window.location.replace('principal.html')
         } else {
             mostrarAlerta(result.mensaje, msgError);
